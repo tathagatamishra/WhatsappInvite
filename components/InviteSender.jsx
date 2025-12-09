@@ -28,7 +28,7 @@ export default function InviteSender() {
     fd.append("image", imageFile);
     try {
       const res = await axios.post(
-        "http://localhost:4000/upload-image",
+        "https://whatsapp-invite-backend.vercel.app/upload-image",
         fd,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -59,7 +59,7 @@ export default function InviteSender() {
     const payload = { recipients, message, imageUrl };
     try {
       const res = await axios.post(
-        "http://localhost:4000/generate-links",
+        "https://whatsapp-invite-backend.vercel.app/generate-links",
         payload
       );
       setLinks(res.data.links);
